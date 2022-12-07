@@ -9,10 +9,10 @@ on:
 jobs:
   make-release:
     runs-on: ubuntu-latest
-  steps:
-    - name: Check out
-      uses: actions/checkout@v3
-    - name: Start the build process
-      run: echo  Start building version ${ input.version } from branch ${ branch }
-    - run: pwd
-    - run: ls ./scripts
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+      - name: Start the build process
+        run: echo  Start building version ${{ input.version }} from branch ${{ branch }}
+      - run: pwd
+      - run: ls ./scripts
