@@ -1,32 +1,18 @@
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'
+      version:
+        description: 'Version number to create, e.g., "3.11.1rc1"'
         required: true
-        default: 'warning' 
-        type: choice
-        options:
-        - info
-        - warning
-        - debug 
-      print_tags:
-        description: 'True to print to STDOUT'
-        required: true 
-        type: boolean 
-      tags:
-        description: 'Test scenario tags'
-        required: true 
         type: string
-      environment:
-        description: 'Environment to run tests against'
-        type: environment
-        required: true 
 
 jobs:
-  print-tag:
+  make-release:
     runs-on: ubuntu-latest
-    if:  ${{ inputs.print_tags }} 
-    steps:
-      - name: Print the input tag to STDOUT
-        run: echo  The tags are ${{ inputs.tags }} 
+  steps:
+    - name: Check out
+      uses: actions/checkout@v3
+    - name: Start the build process
+    - run: echo  Start building version ${ input.version } from branch ${ branch }
+    - run: pwd
+    - run: ls ./scripts
