@@ -13,6 +13,6 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
       - name: Start the build process
-        run: echo  Start building version ${{ inputs.version }} from branch ${{ GITHUB_REF x}}
+        run: echo  Start building version ${{ inputs.version }} from branch $GITHUB_REF
       - run: pwd
       - run: ls ./scripts
